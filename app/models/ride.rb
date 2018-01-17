@@ -13,7 +13,6 @@ class Ride < ActiveRecord::Base
       user.tickets -= attraction.tickets
       user.happiness += attraction.happiness_rating
       user.nausea += attraction.nausea_rating
-      binding.pry
       user.save
     end
   end
