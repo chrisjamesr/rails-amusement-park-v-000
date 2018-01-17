@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
 
 
-  root 'attractions#index' 
+  root 'welcome#home'
+
+  get 'attractions/index' => 'attractions#index'
 
   get '/login' => 'sessions#new'
   post '/sessions' => 'sessions#create'
