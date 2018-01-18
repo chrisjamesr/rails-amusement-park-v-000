@@ -1,2 +1,20 @@
-<h1>Session#new</h1>
-<p>Find me in app/views/session/new.html.erb</p>
+
+
+  <%= form_for(:user, :url => sessions_path)  do |f| %>
+    <%=f.text_field :name, :placeholder => "Enter Your Name" %><br>
+    <%=f.password_field :password, :placeholder => "Enter Your Name" %><br>
+    <%= f.submit 'Log In'%>
+  <% end %>
+
+  <!-- 
+    @mindy = User.create(
+      name: "Mindy",
+      password: "password",
+      happiness: 3,
+      nausea: 2,
+      tickets: 10,
+      height: 50
+    )
+    fill_in("user[name]", :with => "Mindy")
+    fill_in("user[password]", :with => "password")
+    click_button('Sign In') -->
