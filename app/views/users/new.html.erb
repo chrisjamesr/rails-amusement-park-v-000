@@ -13,5 +13,7 @@
   <%= f.text_field :nausea %><br>
   <%= f.label "Tickets on hand (0-1000)" %><br>
   <%= f.text_field :tickets %><br>
+  <%= f.hidden_field(:admin, :value => false) %>
+<!-- <input type="hidden" id="signup_pass_confirm" name="signup[pass_confirm]" value="true" /> -->
   <%= f.submit "Create User" %>
 <% end %>
