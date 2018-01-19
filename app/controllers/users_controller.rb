@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-before_action :current_user, :only => [:show] 
+before_action :authentication_redirect, :current_user, :only => [:show, :update] 
   def new
     @user = User.new
   end
@@ -18,6 +18,8 @@ before_action :current_user, :only => [:show]
   def show
     
   end
+
+
 
   private
 
