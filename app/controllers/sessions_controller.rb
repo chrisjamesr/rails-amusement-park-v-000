@@ -4,9 +4,9 @@ class SessionsController < ApplicationController
   end
 
   def create
-    raise params.inspect
+    
     if @user = User.find_by(:name => params[:user][:name])    
-      if @user && user.authenticate(params[:user][:password])
+      if @user && @user.authenticate(params[:user][:password])
         session[:user_id] = @user.id 
         redirect_to user_path(@user)
       else
@@ -20,7 +20,6 @@ class SessionsController < ApplicationController
   def destroy
     reset_session
     flash[:notice] = "You have been logged out!"
-    render :new
-
+    redirect_to root_path
   end
 end
