@@ -2,19 +2,8 @@
 
   <%= form_for(:user, :url => sessions_path)  do |f| %>
     <%=f.text_field :name, :placeholder => "Enter Your Name" %><br>
-    <%=f.password_field :password, :placeholder => "Enter Your Name" %><br>
-    <%= f.submit 'Log In'%>
+    <%=f.password_field :password, :placeholder => "Enter Your Password" %><br>
+    <%= f.submit 'Sign In'%>
   <% end %>
 
-  <!-- 
-    @mindy = User.create(
-      name: "Mindy",
-      password: "password",
-      happiness: 3,
-      nausea: 2,
-      tickets: 10,
-      height: 50
-    )
-    fill_in("user[name]", :with => "Mindy")
-    fill_in("user[password]", :with => "password")
-    click_button('Sign In') -->
+
