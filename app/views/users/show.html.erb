@@ -1,4 +1,13 @@
-<h1><%= @user.name %></h1>
+
+<h1><%= @user.name %> - <%= "ADMIN" if @user.admin%></h1>
+
 <h3>Mood: <%= @user.mood %></h3>
 <h3>Height: <%= @user.height %>"</h3>
 <h3>Tickets: <%= @user.tickets %></h3>
+<br><br>    
+<%= link_to "See attractions", attractions_path %> 
+<br><br>
+<%= link_to "Log Out", logout_path %>
+<%#= form_tag(logout_path) do %>
+  <%#= submit_tag "Log Out" %>
+<%# end %>
