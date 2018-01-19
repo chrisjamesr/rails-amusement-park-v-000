@@ -31,6 +31,10 @@
 
     <!-- content -->
     <div class="container"  role="main">
+      <div class="message">
+        <%= flash[:notice] %>
+      </div>
+
       <%= yield %>
     </div>
 
