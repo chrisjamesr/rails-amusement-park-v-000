@@ -2,3 +2,5 @@
 
 
 <%= render(@attractions) || "No Attractions" %>
+
+<%= link_to "New Attraction", new_attraction_path if is_admin? %>

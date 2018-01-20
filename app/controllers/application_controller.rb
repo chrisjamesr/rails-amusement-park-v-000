@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
   # before_action :current_user
-
+  helper_method :is_admin?
 
   private
 
@@ -17,6 +17,14 @@ class ApplicationController < ActionController::Base
 
   def authentication_redirect
     redirect_to root_path unless logged_in?
+  end
+
+  def is_admin?
+    current_user.admin
+  end
+
+  def admin_redirect
+    redirect_to attractions_path, flash[:notice] => "Not an Admin" unless is_admin?
   end
 
 end

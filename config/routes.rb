@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   post '/rides' => 'rides#create'
 
   root 'welcome#home'
-  resources :attractions, :only => [:index, :show]
+  resources :attractions
   
 
   get '/signin' => 'sessions#new'
